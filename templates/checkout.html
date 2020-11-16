@@ -1,0 +1,158 @@
+{% extends 'shared/_base.html' %} {% block content %}
+
+<!--Checkout Area Start-->
+<section class="checkout-area area-padding ptb-40" id="checkoutArea">
+	<!-- Begin checkout -->
+	<div class="ld-subpage-content">
+		<div class="checkout-content">
+			<!-- Begin checkout section -->
+			<section class="checkout">
+				<section class="checkout-section">
+					<div class="ld-checkout-inner">
+						<div class="xs-margin"></div>
+
+						<div class="accordion" id="collapse">
+							<div>
+								<div class="container">
+									<h2 class="accordion-title">
+										<span>1. Delivery Method </span>
+									</h2>
+
+									<div>
+										<div class="row accordion-body-wrapper">
+											<div class="col-md-12">
+												<p>Delivery methods here</p>
+												<div class="form-check">
+													<input
+														class="form-check-input"
+														type="radio"
+														name="exampleRadios"
+														id="exampleRadios1"
+														value="option1"
+														checked
+													/>
+													<label class="form-check-label" for="exampleRadios1">
+														Pickup
+													</label>
+												</div>
+												<div class="form-check">
+													<input
+														class="form-check-input"
+														type="radio"
+														name="exampleRadios"
+														id="exampleRadios2"
+														value="option2"
+													/>
+													<label class="form-check-label" for="exampleRadios2">
+														Delivery
+													</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="lg-margin2x"></div>
+									</div>
+								</div>
+							</div>
+
+							<div class="accordion-group panel">
+								<div class="container">
+									<h2 class="accordion-title mb-0">
+										<span>2. Confirm Order </span>
+										<a
+											class="accordion-btn open"
+											data-toggle="collapse"
+											href="#collapse-five"
+										></a>
+									</h2>
+
+									<div class="col-sm-6 padding-left-md">
+										<p>We would use the details below to get in touch.</p>
+
+										<div class="xss-margin"></div>
+
+										<form action="{% url 'checkout' %}" method="POST">
+											<div class="form-group">
+												<label for="email" class="form-label"
+													>Fullname
+
+													<span class="required">*</span>
+												</label>
+												<input
+													type="text"
+													name="fullname"
+													id="fullname"
+													class="form-control input-lg"
+													required
+												/>
+											</div>
+
+											<div class="form-group">
+												<label for="email" class="form-label">e-mail </label>
+												<input
+													type="email"
+													name="email"
+													id="email"
+													class="form-control input-lg"
+												/>
+											</div>
+
+											<div class="form-group">
+												<label for="password" class="form-label"
+													>phone
+
+													<span class="required">*</span>
+												</label>
+												<input
+													type="tel"
+													name="phone"
+													id="phone"
+													class="form-control input-lg"
+													required
+												/>
+											</div>
+
+											<div class="form-group">
+												<label for="password" class="form-label"
+													>location
+
+													<span class="required">*</span>
+												</label>
+												<input
+													type="text"
+													name="location"
+													id="location"
+													class="form-control input-lg"
+													required
+												/>
+											</div>
+
+											<div class="top-5px"></div>
+
+											<div class="xss-margin"></div>
+
+											<input
+												type="submit"
+												class="btn btn-dark"
+												value="CONFIRM ORDER"
+											/>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="xlg-margin"></div>
+					</div>
+				</section>
+			</section>
+			<!-- End checkout section -->
+		</div>
+		<!-- /.checkout-content -->
+	</div>
+	<!-- /.ld-subpage-content -->
+	<!-- End checkout -->
+</section>
+<!--End of Checkout Area-->
+
+{% endblock content %}

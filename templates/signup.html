@@ -1,0 +1,163 @@
+{% extends 'shared/_base.html' %} {% block content %}
+
+<section>
+  <div class="signuppanel">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="signup-info">
+          <div class="logopanel">
+            <h1><span>[</span> POSANZY GHANA <span>]</span></h1>
+          </div>
+          <!-- logopanel -->
+
+          <div class="mb20"></div>
+
+          <h5><strong>Why Choose US!</strong></h5>
+          <p>
+            When it comes to healthy, quality and affordable meat products,
+            POSANZY GHANA LIMITED has the power to the production and
+            distribution of meat products such as goat meat, cow meat, locally
+            grown poultry for the local and international market
+          </p>
+          <p>Below are some of the benefits you can have when deal with us.</p>
+          <div class="mb20"></div>
+
+          <div class="feat-list">
+            <i class="fa fa-wrench"></i>
+            <h4 class="text-success">Easy access to hygienic Meat</h4>
+            <p>Posanzy provides meat under strict hygienic conditions</p>
+          </div>
+
+          <div class="feat-list">
+            <i class="fa fa-compress"></i>
+            <h4 class="text-success">Portable Packaging</h4>
+            <p>
+              Portable and Reusable packaging materials are used to serve our
+              customers on all occasions
+            </p>
+          </div>
+
+          <div class="feat-list mb20">
+            <i class="fa fa-search-plus"></i>
+            <h4 class="text-success">Value for Time and Money</h4>
+            <p>
+              We deliver quality and healthy meat products right at your
+              doorstep
+            </p>
+          </div>
+
+          <h4 class="mb20">and much more...</h4>
+        </div>
+        <!-- signup-info -->
+      </div>
+      <!-- col-sm-6 -->
+
+      <div class="col-md-6">
+        <form method="post" action="#">
+          <h3 class="nomargin">Sign Up</h3>
+          <p class="mt5 mb20">
+            Already a member?
+            <a href="signin.html"><strong>Sign In</strong></a>
+          </p>
+
+          <label class="control-label">Name</label>
+          <div class="row mb10">
+            <div class="col-sm-6">
+              <input type="text" class="form-control" placeholder="Firstname" />
+            </div>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" placeholder="Lastname" />
+            </div>
+          </div>
+
+          <div class="mb10">
+            <label class="control-label">Username</label>
+            <input type="text" class="form-control" />
+          </div>
+
+          <div class="mb10">
+            <label class="control-label">Password</label>
+            <input type="password" class="form-control" />
+          </div>
+
+          <div class="mb10">
+            <label class="control-label">Retype Password</label>
+            <input type="password" class="form-control" />
+          </div>
+
+          <label class="control-label">Birthday</label>
+          <div class="row mb10">
+            <div class="col-sm-5">
+              <select
+                class="form-control chosen-select"
+                data-placeholder="Month"
+              >
+                <option value="Select">Select Month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+              </select>
+            </div>
+            <div class="col-sm-3">
+              <input type="text" class="form-control" placeholder="Day" />
+            </div>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" placeholder="Year" />
+            </div>
+          </div>
+
+          <div class="mb10">
+            <label class="control-label">Email Address</label>
+            <input type="text" class="form-control" />
+          </div>
+
+          <div class="mb10">
+            <label class="control-label">Location</label>
+            <select
+              class="form-control chosen-select"
+              data-placeholder="Choose a Region..."
+            >
+              <option value="Select Region">Select Region</option>
+              <option value="Upper West">Upper West</option>
+
+              <option value="Upper East">Upper East</option>
+
+              <option value="North East">North East</option>
+
+              <option value="Northern">Northern</option>
+
+              <option value="Bono East">Bono East</option>
+              <option value="Ahafo">Ahafo</option>
+              <option value="Bono">Bono</option>
+              <option value="Ashanti">Ashanti</option>
+              <option value="Oti">Oti</option>
+              <option value="Volta">Volta</option>
+              <option value="Eastern">Eastern</option>
+              <option value="Greater Accra">Greater Accra</option>
+              <option value="Central">Central</option>
+              <option value="Western">Western</option>
+              <option value="Western North">Western North</option>
+            </select>
+          </div>
+          <br />
+
+          <button class="btn btn-success btn-block">Sign Up</button>
+        </form>
+      </div>
+      <!-- col-sm-6 -->
+    </div>
+    <!-- row -->
+  </div>
+  <!-- signuppanel -->
+</section>
+
+{% endblock content %}

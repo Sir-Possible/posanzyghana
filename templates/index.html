@@ -1,0 +1,157 @@
+{% extends 'shared/_base.html' %} {% load static %} {% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<div
+				id="carouselExampleIndicators"
+				class="carousel slide"
+				data-ride="carousel"
+			>
+				<ol class="carousel-indicators">
+					<li
+						data-target="#carouselExampleIndicators"
+						data-slide-to="0"
+						class="active"
+					></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img
+							class="w-100"
+							height="500"
+							src="static/images/1 (5).jpeg"
+							alt="First slide"
+						/>
+					</div>
+					<div class="carousel-item">
+						<img
+							class="w-100"
+							height="500"
+							src="static/images/1 (6).jpeg"
+							alt="Second slide"
+						/>
+					</div>
+					<div class="carousel-item">
+						<img
+							class="w-100"
+							height="500"
+							src="static/images/1 (10).jpeg"
+							alt="Third slide"
+						/>
+					</div>
+					<div class="carousel-item">
+						<img
+							class="w-100"
+							height="500"
+							src="static/images/boer.jpg"
+							alt="Fourth slide"
+						/>
+					</div>
+				</div>
+				<a
+					class="carousel-control-prev"
+					href="#carouselExampleIndicators"
+					role="button"
+					data-slide="prev"
+				>
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a
+					class="carousel-control-next"
+					href="#carouselExampleIndicators"
+					role="button"
+					data-slide="next"
+				>
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="sidebar-navigation">
+				<div class="title">Categories<i class="fa fa-angle-down"></i></div>
+				<div class="list">
+					{% for item in categories %}
+					<a class="entry" href="{% url 'product_category' item %}"
+						><span><i class="fa fa-angle-right"></i>{{item}}</span></a
+					>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- end new collection directory -->
+
+<section id="popular-product" class="ecommerce">
+	<div class="container">
+		<!-- Shopping items content -->
+		<div class="shopping-content">
+			<!-- Block heading two -->
+			<div class="block-heading-two">
+				<h3><span>Fresh Meat</span></h3>
+			</div>
+
+			<div class="row">
+				{% for item in products %}
+				<div class="col-md-3 col-sm-6">
+					<!-- Shopping items -->
+					<div class="shopping-item" style="height: 48vh">
+						<!-- Image -->
+						<a href="{% url 'single_product' item.slug %}"
+							><img
+								class="img-responsive"
+								style="height: 30vh"
+								src="{{item.image.url}}"
+								alt=""
+						/></a>
+						<!-- Shopping item name / Heading -->
+						<h4>
+							<a href="{% url 'single_product' item.slug %}">{{item.name}}</a
+							><span class="color pull-right">GHS {{item.markup_price}}</span>
+						</h4>
+						<div class="clearfix"></div>
+						<!-- Buy now button -->
+						<div class="visible-xs">
+							<a
+								class="btn btn-primary btn-sm add-to-cart"
+								data-id="{{item.id}}"
+								data-name="{{item.name}}"
+								data-price="{{item.markup_price}}"
+								>Add to cart</a
+							>
+						</div>
+						<!-- Shopping item hover block & link -->
+						<!-- <div class="item-hover bg-color hidden-xs">
+							<a href="/">Add to cart</a>
+						</div> -->
+					</div>
+				</div>
+				{% endfor %}
+
+				<!-- Pagination -->
+				<!-- <div class="shopping-pagination pull-right">
+				<ul class="pagination">
+					<li class="disabled"><a href="#">&laquo;</a></li>
+					<li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">&raquo;</a></li>
+				</ul>
+			</div> -->
+				<!-- Pagination end-->
+			</div>
+		</div>
+	</div>
+</section>
+
+{% include 'shared/special_offers.html' %} {% endblock content %}

@@ -1,0 +1,266 @@
+{% extends 'shared/_base.html' %} {% load static %} {% block content %}
+
+<section class="product_content_area pt-40">
+	<!-- start of page content -->
+
+	<div class="row">
+		<div class="posanzy-product-single container">
+			<div class="main" role="main">
+				<div class="product">
+					<div class="row">
+						<div class="col-md-5 col-sm-6 summary-before">
+							<div class="product-slider product-shop">
+								<span class="onsale">Sale!</span>
+								<a
+									href="{{product.image.url}}"
+									data-imagelightbox="gallery"
+									class="hoodie_7_front"
+								>
+									<img
+										src="{{product.image.url}}"
+										class="attachment-shop_single"
+										alt="image"
+										height="250"
+									/>
+								</a>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-5 product-review entry-summary">
+							<h1 class="product_title">{{product.name}}</h1>
+
+							<div>
+								<p class="price">
+									<del><span class="amount">GHS 40.00</span></del>
+									<ins
+										><span class="amount"
+											>GHS {{product.markup_price}}</span
+										></ins
+									>
+								</p>
+							</div>
+
+							<p>Fresh,Tasty and Delicious Goat Meat</p>
+
+							<form class="variations_form cart" method="post">
+								<div class="quantity">
+									<input
+										type="number"
+										step="1"
+										name="quantity"
+										value="1"
+										title="Qty"
+										class="input-text qty text"
+										size="4"
+										min="1"
+									/>
+								</div>
+
+								<button type="submit" class="cart-button">Add to cart</button>
+							</form>
+
+							<div class="product_meta">
+								<span class="sku_wrapper"
+									>SKU: <span class="sku">{{product.sku}}</span>.</span
+								>
+								add category here
+
+								<span class="posted_in">Weight: {{product.weight}}</span>
+							</div>
+						</div>
+						<!-- .summary -->
+					</div>
+
+					<div class="wrapper-description">
+						<ul class="tabs-nav clearfix">
+							<li class="active">Description</li>
+							<!-- <li>Review (0)</li> -->
+						</ul>
+						<div class="tabs-container product-comments">
+							<div class="tab-content">
+								<section class="related-products">
+									<h2>Product Description</h2>
+
+									<p>{{product.description}}</p>
+								</section>
+							</div>
+
+							<div class="tab-content">
+								<div class="panel entry-content">
+									<div id="reviews">
+										<div class="row">
+											<div class="col-md-6">
+												<div id="comments">
+													<ol class="commentlist">
+														<li class="comment depth-1">
+															<div class="comment_container">
+																<img
+																	src="../static/images/icons/user-image.png"
+																	alt="image"
+																	class="avatar photo"
+																/>
+																<div class="comment-text">
+																	<p class="meta">
+																		<span
+																			class="star-rating"
+																			title="Rated 4.00 out of 5"
+																		>
+																			<i class="fa fa-star"></i>
+																			<i class="fa fa-star"></i>
+																			<i class="fa fa-star"></i>
+																			<i class="fa fa-star"></i>
+																			<i class="fa fa-star-o"></i>
+																		</span>
+																		<strong>Stuart</strong> –
+																		<time datetime="2020-7-6 12:03:24+00:00"
+																			>December 5, 2020</time
+																		>:
+																	</p>
+
+																	<div class="description">
+																		<p>
+																			I so much love your product. You are the
+																			best
+																		</p>
+																	</div>
+																</div>
+															</div>
+														</li>
+													</ol>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div id="review_form_wrapper">
+													<div id="review_form">
+														<div id="respond" class="comment-respond">
+															<h3 class="comment-reply-title">Add a review</h3>
+															<form
+																action="#"
+																method="post"
+																id="commentform"
+																class="comment-form"
+															>
+																<p class="comment-form-author">
+																	<label for="author"
+																		>Name <span class="required">*</span></label
+																	>
+																	<input
+																		id="author"
+																		name="author"
+																		type="text"
+																	/>
+																</p>
+																<p class="comment-form-email">
+																	<label for="email"
+																		>Email
+																		<span class="required">*</span></label
+																	>
+																	<input id="email" name="email" type="text" />
+																</p>
+																<p class="comment-form-comment">
+																	<label for="comment">Your Review</label
+																	><textarea
+																		id="comment"
+																		name="comment"
+																		cols="45"
+																		rows="8"
+																		aria-required="true"
+																	></textarea>
+																</p>
+																<p class="form-submit">
+																	<input
+																		name="submit"
+																		type="submit"
+																		id="submit"
+																		class="submit"
+																		value="Submit"
+																	/>
+																</p>
+															</form>
+														</div>
+														<!-- #respond -->
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="clear"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- #product-293 -->
+			</div>
+			<!-- end of main -->
+		</div>
+		<!-- end of .row -->
+	</div>
+
+	<!-- end of page content -->
+</section>
+
+<!-- service area -->
+<section class="block gray no-padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content-box no-margin go-simple">
+					<div class="mini-service-sec">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="mini-service">
+									<i class="fa fa-paper-plane"></i>
+									<div class="mini-service-info">
+										<h3>Nationwide Delivery</h3>
+										<p>We deliver right at your doorstep</p>
+									</div>
+								</div>
+								<!-- Mini Service -->
+							</div>
+							<div class="col-md-3">
+								<div class="mini-service">
+									<i class="fa fa-newspaper-o"></i>
+									<div class="mini-service-info">
+										<h3>Online Shopping</h3>
+										<p>
+											Place order for any form of errand within the Wa
+											Municipality
+										</p>
+									</div>
+								</div>
+								<!-- Mini Service -->
+							</div>
+							<div class="col-md-3">
+								<div class="mini-service">
+									<i class="fa fa-medkit"></i>
+									<div class="mini-service-info">
+										<h3>Friendly Stuff</h3>
+										<p>We provide a friendly environment for business</p>
+									</div>
+								</div>
+								<!-- Mini Service -->
+							</div>
+							<div class="col-md-3">
+								<div class="mini-service">
+									<i class="fa fa-newspaper-o"></i>
+									<div class="mini-service-info">
+										<h3>24/h Support</h3>
+										<p>We are opened 24/7 for all services</p>
+									</div>
+								</div>
+								<!-- Mini Service -->
+							</div>
+						</div>
+					</div>
+					<!-- Mini Service Sec -->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<div class="clearfix"></div>
+<!-- end service area -->
+
+{% endblock content %}
