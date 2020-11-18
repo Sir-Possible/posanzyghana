@@ -1,1 +1,1 @@
-web: gunicorn pgl.wsgi --log-file -
+web:gunicorn posanzyghana.wsgi --log-file -
