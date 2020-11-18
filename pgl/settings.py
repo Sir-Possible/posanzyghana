@@ -144,7 +144,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-DISABLE_COLLECTSTATIC=1
 
 MEDIA_URL = '/asset/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
