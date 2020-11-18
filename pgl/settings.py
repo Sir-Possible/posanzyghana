@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+'whitenoise.runserver_nostatic',
     # custom app
     'store.apps.StoreConfig',
 ]
@@ -54,7 +54,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
+
+STATICFILES_STORAGE='whitenoise.storage.CompressManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'pgl.urls'
 
@@ -79,6 +82,11 @@ WSGI_APPLICATION = 'pgl.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+
+import dj_databse_url
+
+db_from_env = dj_databse_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 DATABASES = {
     'default': {
@@ -134,9 +142,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-DISABLE_COLLECTSTATIC=1
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+DISABLE_COLLECTSTATIC=1
 
 MEDIA_URL = '/asset/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
