@@ -83,9 +83,9 @@ WSGI_APPLICATION = 'pgl.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-import django.db.backends.postgresql
+import dj_database_url
 
-db_from_env = django.db.backends.postgresql.config(conn_max_age=1200)
+db_from_env = dj_database_url.config(conn_max_age=1200)
 DATABASES['default'].update(db_from_env)
 
 # DATABASES = {
