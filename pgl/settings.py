@@ -88,21 +88,21 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=1200)
 DATABASES['default'].update(db_from_env)
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'pgl_db',
-#         'USER': 'postgres',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#         'PASSWORD': 'admin',
-#         'CONN_MAX_AGE': 1200  },
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'pgl_db',
+        'USER': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'PASSWORD': 'admin',
+        'CONN_MAX_AGE': 1200  },
     
-#     # 'default': {
-#     #     'ENGINE': 'django.db.backends.sqlite3',
-#     #     'NAME': 'posanzy_db',
-#     # }
-# }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': 'posanzy_db',
+    # }
+}
 
 
 # Password validation
